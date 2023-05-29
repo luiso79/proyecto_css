@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Work+Sans:wght@100;300;400;500;600;700&display=swap');
 
+/*** al final estan los media queries para tablet y celular ***/
+
 /*reseteo de valores- reset*/
 *{
     margin:0;
@@ -13,17 +15,29 @@ body{
     font-weight: 400;
 }
 
-.header{
-    height: 100vh;
+.icon{
+    color: lightslategray;
+    font-size: 5rem;
+    position:fixed;
+    bottom:10px;
+    right: 10px;
 }
+
+
+/****  HEADER  ****/
+
+.header{
+    height: 100vh; /* para que se vea el header en toda la pantalla */
+}
+
 .contenedorNav{
     display:flex;
     justify-content:space-between;
-    /*flex-wrap: wrap;*/
     background-color: rgb(69, 69, 69);
     padding:1.2rem 5rem;
-    height: 12%;
+    height: 12%;  /* 12% del header */
 }
+
 .contenedorLogo{
     width: 25%;
     display:flex;
@@ -39,148 +53,224 @@ body{
 .contenedorLogo h2{
     color:white;
 }
+
 .navegacion ul{
     height: 100%;/*la navegacion es el padre*/
     list-style: none;
     display:flex;
     align-items: center;
-    flex-direction: row;
 }
+
+/* items de la lista de .navegacion */
 .linkNav{
     text-decoration: none;
     padding-left:1.3rem;
     font-size: 1rem;
     font-weight: 500;
     color: white;
-   
 }
+
+.comprar{
+    text-decoration: none;
+    padding-left:1.3rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(37, 172, 37);
+}
+
 .contenedorConferencia{
     background:linear-gradient(to right, #0000009c,#0000009c ),url("../assets/img/ba1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 88%;
+    height: 88%; /* 88% DEL HEADER */
     display:flex;
-    justify-content: flex-end;
-    align-items:center;
+    justify-content: flex-end; /* a la derecha */
+    align-items:center; /* centrado vertical */
 }
+
 .hijoConferencia{
     padding-right: 5rem;
-   
-    width: 50%;
+    width: 50%; /* 50% de la section contenedorConferencia */
     height: 50%;
     display: flex;
-    flex-direction:column;
-    justify-content:space-between;
+    flex-direction:column; /* items h1, p y div botones */
+    justify-content:space-around;
 }
 
 .hijoConferencia h1{
     color:white;
     text-align: right;
-   
 }
+
 .textoConferencia{
-    font-size:25px;
-    font-size: 2rem; /*32px*/
-    font-size: 1.5rem;
-    line-height: 1.5;
-    font-weight: 500;/*negrita*/
     color:white;
     text-align: right;
 }
 
+#botones{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#botones button{
+    margin-left: 2%;
+}
+
+
+/****  MAIN  ****/
+
+/**** Tarjetas ****/
+
+.sectionOradores{
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+}
+
+.sectionOradores h2{
+    text-align: center;
+}
+
 .padreCards{
-    margin-top:50px;
+    display:flex;
+    justify-content: space-around;
     text-align: left;
-    width: 80%;
-    height:100vh;
-    margin: 0 auto;
+    width: 80%; /* 80% de la section oradores */
+    margin: 1% auto;
 }
 
 .card{
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
     background-color:white;
-    width:30%;
-    height:75%;
+    width:30%; /* del padreCards */
     border:1px solid rgb(180, 180, 180);
     border-radius: 5px;
 }
 
 .card img{
     width:100%;
-    height: 60%;
-    object-fit: cover;
-   
+    height: 60%; /* de la tarjeta */
+    object-fit: fill;
 }
 
-.cardBody{
-    margin:15px;
+/* margen al texto de la tarjeta */
+.cardBody{ 
+    margin:1%;
 }
 
-.icon{
-    color:rgb(237, 29, 157);
-    font-size: 5rem;
-    position:fixed;
-    bottom:10px;
-    right: 10px;
-    
+
+/**** Lugar y Fecha ****/
+
+#lugarFecha{
+    display: flex;
 }
 
-/*MIERCOLES 5/4
-FONTAWESOME -ICONOS
-FAVICON
-FUENTE PROPIA DESCARGADA EN LA COMPU
-position:absolute
-position:relative
+#lugarFecha div{
+    height: 60vh;
+    width: 50%;
+    color: white;
+    background-color: rgb(69, 69, 69);
+}
 
--mediasqueries responsive
--bootstrap
--bem
--animaciones-transiciones- transformaciones
--pseudoclases pseudoelementos :hover 
+.honolulu{
+    background-image: url("../assets/img/honolulu.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-*/
-/*cuando la pantalla mida menos de 600 px*/
-/*cuando la pantalla sea de 601px para arriba */
+.textoLugar{
+    padding: 3%;
+}
 
-/* carga estos estilos */
+
+/**** Formulario ****/
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#formulario *{
+    margin: 5px;
+}
+
+#formulario h2{
+    text-align: center;
+}
+
+
+/**** FOOTER ****/
+
+footer{
+    display: flex;
+    padding: 0 10%;
+    justify-content: space-around;
+    background-color: rgb(35, 35, 100);
+    height: 10vh;
+    align-items: center;
+}
+
+
+/**** MEDIA QUERIES ****/
 
 /*breakpoint para celular de 0 a 768px*/
 @media screen and (max-width: 767px)   {
+    
     .contenedorNav{
-        background-color: rgb(50, 157, 245);
+        background-color: lightblue;
         flex-direction: column;
-        height: initial;
+        height: 30%; /* cambio de 12% a 30% para dar espacio a las opciones de navegacion*/
         justify-content: center;
         align-items: center;
     }
+    .contenedorConferencia{
+        height: 70%;
+    }
     .navegacion .listaNav{
         flex-direction: column;
+    }
+    .hijoConferencia{
+        width: 70%;
+        height: 80%;
+    }
+    
+    .padreCards{
+        flex-direction: column;
+        width: 100%; /* quito los margenes del contenedor */
+        align-items: center;
+    }
+    .card{
+        width: 80%; /* cambio del 30% al 100% del ancho del padreCards */
+        height: 60vh; /* alto de la tarjeta */
+        margin: 1%;
+        }
+    
+    #lugarFecha{
+        flex-direction: column;
+    }
+    #lugarFecha div{
+        width:100%;
+        height: 50vh;
     }
 
 }
 
 /*tablet*/
 @media screen and (min-width:768px) and (max-width:1023px) {
-    /*se cargaron los estilos dentro de las llaves*/
     .contenedorNav{
-        background-color: rgb(245, 213, 50);
+        background-color: yellow;
         flex-direction: column;
-        height: initial;
+        height: 20%;
         justify-content: center;
         align-items: center;
     }
-
-}
-
-/*notebook*/
-@media screen and (min-width:1024px) and (max-width: 1400px) {
-    .contenedorNav{
-        background-color: rgb(245, 50, 222);
+    .contenedorConferencia{
+        height: 80%;
     }
 
-}
-
-@media screen and (min-width:1401px) {
-    
 }
